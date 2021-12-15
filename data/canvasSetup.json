@@ -1,0 +1,9 @@
+{
+    "width": 800,
+    "height": 450,
+    "virtualWidth": "1280px",
+    "virtualHeight": "720px",
+    "backgroundColor": "black",   
+    "font": "50px serif",
+    "border": "2px solid darkBlue"
+}
