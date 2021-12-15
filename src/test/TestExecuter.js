@@ -11,7 +11,7 @@ class TestExecuter {
         this.#tests[test.name] = test;
     }
 
-    executeTests() {
+    async executeTests() {
         var testCount = 0;
         this.#failed = 0;
         this.#passed = 0;
@@ -20,7 +20,7 @@ class TestExecuter {
             console.log(testName +  ":");
 
             for(let testMethodName of this.#tests[testName].getTestNames()) {                   
-                this.#tryTest(testMethodName, this.#tests[testName][testMethodName]);
+                await this.#tryTest(testMethodName, this.#tests[testName][testMethodName]);
                 testCount++;
             }
         }
@@ -31,10 +31,10 @@ class TestExecuter {
         console.log("Total Tests:  " + testCount);
     }
 
-    #tryTest(testMethodName, test) {
+    async #tryTest(testMethodName, test) {
         try
         {
-            test();
+            await test();
             console.log('%c' + '    ' + testMethodName + ': Passed!', 'color: green');
             this.#passed++;
         } catch(error) {

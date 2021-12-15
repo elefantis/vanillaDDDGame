@@ -3,8 +3,8 @@ class Handler {
     #name
     constructor(dispatcher) {
         this.#dispatcher = dispatcher;
-        this.#dispatcher.addHandler(this);
         this.#name = this.constructor.name.replace("Handler", "");
+        this.#dispatcher.addHandler(this);
     }
     
     handle(domainEvent) { }

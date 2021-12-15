@@ -17,7 +17,7 @@ Graphics.Canvas = class extends Domain {
         this.deployer.deploy();
 
         this.#context = this.#canvas.getContext("2d");
-        this.AddDomainEvent(new Graphics.CanvasLoadedEvent());
+        this.AddDomainEvent(new Graphics.Events.CanvasLoadedEvent());
         this.#hasDeployed = true;
     }
 
