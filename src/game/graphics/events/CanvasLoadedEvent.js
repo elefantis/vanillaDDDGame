@@ -1,4 +1,4 @@
-Graphics.Events.CanvasLoadedEvent = class extends DomainEvent {
+Graphics.Events.CanvasLoadedEvent = class CanvasLoadedEvent extends DomainEvent {
     constructor() {
         super();
     }

@@ -23,7 +23,10 @@ Graphics.Test.CanvasLoadedHandlerTest = class CanvasLoadedHandlerTest extends Te
             },
         }
         handler.scene = fakeScene;
-        handler.handle = (event) => { this.scene.started = true; }
+        handler.handle = function(event) 
+        {            
+            this.scene.started = true; 
+        }
 
         // Act
         await canvas.deploy();

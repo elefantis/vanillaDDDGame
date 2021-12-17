@@ -15,7 +15,9 @@ class Transaction
         let domainEvents = [];       
         for(let domain of this.#domains) {
             var event = domain.popDomainEvent();            
-            if(event) domainEvents.push();            
+            if(event) {
+                domainEvents.push(event);            
+            }
         }      
         this.#domainEventDispatcher.dispatchHandlers(domainEvents);
     }

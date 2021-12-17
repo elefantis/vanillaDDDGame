@@ -1,6 +1,6 @@
 class DomainEvent {
     #name
-    constructor() { 
+    constructor() {       
         this.#name = this.constructor.name.replace("Event", "");
     }
 
