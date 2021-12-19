@@ -1,4 +1,4 @@
-Graphics.Test.CanvasTest = class CanvasTest extends Test {
+Graphics.Test.CanvasTest = class CanvasTest extends Tests.Test {
     constructor() {
         super();
     }

@@ -1,4 +1,4 @@
-class UIDTest extends Test{
+KernelTests.UIDTest =  class UIDTest extends Tests.Test{
     constructor() {
         super();
     }

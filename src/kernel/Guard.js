@@ -29,7 +29,7 @@ class Guard {
     }
 
     static validateTest(test) {
-        if(test instanceof Test) {
+        if(test instanceof Tests.Test) {
             return true;
         }
         throw 'Argument exception: is not a valid Test';

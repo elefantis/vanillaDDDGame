@@ -1,4 +1,4 @@
-class AssertError extends Error {
+Tests.AssertError = class AssertError extends Error {
     constructor(expected, result) {
         super();
         this.expected = expected;

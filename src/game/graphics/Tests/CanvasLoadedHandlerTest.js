@@ -1,4 +1,4 @@
-Graphics.Test.CanvasLoadedHandlerTest = class CanvasLoadedHandlerTest extends Test {
+Graphics.Test.CanvasLoadedHandlerTest = class CanvasLoadedHandlerTest extends Tests.Test {
     constructor() {
         super();
     }

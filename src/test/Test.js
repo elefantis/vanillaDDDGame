@@ -1,4 +1,4 @@
-class Test {
+Tests.Test = class Test {
     #name
     constructor() {
         this.#name = this.constructor.name;  

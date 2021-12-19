@@ -1,9 +1,10 @@
-class TestExecuter {
+Tests.TestExecuter = class TestExecuter extends Tests.TestPublisher{
     #tests
     #failed
     #passed
     constructor() {
-        this.#tests = {};       
+        super();
+        this.#tests = {};
     }
 
     addTest(test) {
@@ -17,12 +18,11 @@ class TestExecuter {
         this.#passed = 0;
 
         for(let testName in this.#tests) {
-            console.group(testName);
+            this.addTestNameGroup(testName);        
             for(let testMethodName of this.#tests[testName].getTestNames()) {                   
                 await this.#tryTest(testMethodName, this.#tests[testName][testMethodName]);
                 testCount++;
-            }
-            console.groupEnd()
+            }            
         }        
 
         console.log(" ");
@@ -35,15 +35,10 @@ class TestExecuter {
         try
         {
             await test();
-            console.log('%c' + testMethodName + ': Passed!', 'color: green');
+            this.addSuccessfulTest(testMethodName);            
             this.#passed++;
         } catch(error) {
-            if(error instanceof AssertError) {
-                console.log('%c' + testMethodName + ': Failed, Expected: ' + error.expected + ', but result: ' + error.result, 'color: red');
-            } else {
-                console.log('%c' + testMethodName + ': Failed. The test throws and exception. Exception:', 'color: red');
-                console.log(error);
-            }
+            this.addFailedTest(testMethodName, error);
             this.#failed++;            
         }
     }
