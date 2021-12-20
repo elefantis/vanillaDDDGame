@@ -16,7 +16,7 @@ Tests.TestPublisher = class TestPublisher {
 
     addSuccessfulTest(name) {
         this.#subscribers.forEach((subscriber) => {
-            subscriber.addSuccessTest(name);
+            subscriber.addSuccessfulTest(name);
         });
     }
 

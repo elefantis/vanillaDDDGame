@@ -5,7 +5,7 @@ Tests.ITestSubscriber = class ITestSubscriber {
 
     addTestNameGroup(name) {}
 
-    addSuccessTest(name) {}
+    addSuccessfulTest(name) {}
 
     addFailedTest(name, error) {}
 }

@@ -8,13 +8,15 @@ Tests.TestConsoleViewer = class TestConsoleViewer {
             } else {
                 this.#displayGroup(key, tests[key]);
             }
-        }       
+        } 
+       
+        console.table(tests.testResults);
     }
     
-    #displayGroup(groupName, group) {       
+    #displayGroup(groupName, group) {        
         if(group.failedGroup == true) {
             console.group(groupName);
-        } else {
+        } else if(groupName != "testResults") {
             console.groupCollapsed(groupName);
         }
 

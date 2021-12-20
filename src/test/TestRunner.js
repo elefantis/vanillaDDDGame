@@ -11,8 +11,8 @@ Tests.Runner = class TestRunner {
         this.#executer.addTest(test);
     }
 
-    executeTests() {
-        this.#executer.executeTests();
+    async executeTests() {
+        await this.#executer.executeTests();
         this.#viewer.display();
     }
 }

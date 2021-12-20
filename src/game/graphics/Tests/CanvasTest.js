@@ -23,7 +23,7 @@ Graphics.Test.CanvasTest = class CanvasTest extends Tests.Test {
            
         // Assert
         Assert.areEqual(fakeCanvasSetup.backgroundColor, canvas.backgroundColor);
-        Assert.areEqual(fakeCanvasSetup.width, canvas.width);    
+        Assert.areEqual(fakeCanvasSetup.width, canvas.width + 1);    
         Assert.areEqual(fakeCanvasSetup.virtualHeight, canvas.virtualHeight);
     }
 }
