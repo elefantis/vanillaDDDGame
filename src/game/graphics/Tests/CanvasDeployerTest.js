@@ -17,7 +17,7 @@ Graphics.Test.CanvasDeployerTest = class CanvasDeployerTest extends Tests.Test {
     deployTest() {
         var deployer = new Graphics.CanvasDeployer();
         var fakeCanvasSetup = new Graphics.Test.FakeCanvasSetup();
-
+       
         var canvas = deployer.setup(fakeCanvasSetup);
         var expected = "fakeCanvas";
         canvas.id = expected;

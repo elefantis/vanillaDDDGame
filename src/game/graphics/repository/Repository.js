@@ -1,5 +1,8 @@
 Graphics.Repository = class {
-    constructor() { }
+    #currentScene
+    constructor() { 
+        this.#currentScene = null;
+    }
 
     async getCanvasSetup() {
         try {
@@ -7,5 +10,18 @@ Graphics.Repository = class {
          } catch(error) {
              throw error;
          }    
+    }
+
+    async getScene(sceneId) {
+        try {
+            return await this.#tryGetScene(sceneId);           
+         } catch(error) {
+             throw error;
+         }  
+    }
+
+    async #tryGetScene(sceneId) {
+        var scenes = await Service.Loader.LoadJsonAsync("data/scenes.json");
+        return scenes[sceneId];
     }
 }

@@ -2,9 +2,9 @@ Graphics.Canvas = class extends Domain {
     #canvas
     #context
     #hasDeployed
-    constructor(transaction) {        
+    constructor(transaction, repository) {        
         super(transaction); 
-        this.repository = new Graphics.Repository();
+        this.repository = repository;
         this.deployer = new Graphics.CanvasDeployer();     
         this.#hasDeployed = false;
     }

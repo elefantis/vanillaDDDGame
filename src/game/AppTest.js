@@ -5,6 +5,8 @@
     executer.addTest(new Graphics.Test.CanvasDeployerTest());
     executer.addTest(new Graphics.Test.CanvasLoadedHandlerTest());
 
+    executer.addTest(new Graphics.Test.SceneTest());
+
     await executer.executeTests();
     document.body.innerHTML = "";
 })();

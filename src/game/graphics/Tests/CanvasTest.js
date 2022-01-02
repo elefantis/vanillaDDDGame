@@ -7,15 +7,9 @@ Graphics.Test.CanvasTest = class CanvasTest extends Tests.Test {
         // Arrange
         var dispatcher = new DomainEventDispatcher();
         var transaction = new Transaction(dispatcher);
-        var canvas = new Graphics.Canvas(transaction);
         var fakeCanvasSetup = new Graphics.Test.FakeCanvasSetup();
-
-        var fakeRepo = {
-            getCanvasSetup: function() {
-                return fakeCanvasSetup;
-            } 
-        }
-        canvas.repository = fakeRepo;
+        var fakeRepo = new Graphics.Test.FakeRepository();       
+        var canvas = new Graphics.Canvas(transaction, fakeRepo);
 
         // Act
         await canvas.deploy();
@@ -23,7 +17,7 @@ Graphics.Test.CanvasTest = class CanvasTest extends Tests.Test {
            
         // Assert
         Assert.areEqual(fakeCanvasSetup.backgroundColor, canvas.backgroundColor);
-        Assert.areEqual(fakeCanvasSetup.width, canvas.width + 1);    
+        Assert.areEqual(fakeCanvasSetup.width, canvas.width);    
         Assert.areEqual(fakeCanvasSetup.virtualHeight, canvas.virtualHeight);
     }
 }

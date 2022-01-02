@@ -16,7 +16,7 @@ class DomainEventDispatcher {
 
     dispatchHandlers(domainEvents) {
         for(let event of domainEvents) {
-            if(event.name in this.#handlers) {
+            if(event.name in this.#handlers) {               
                 this.#executeEvent(event);
             }
         }
