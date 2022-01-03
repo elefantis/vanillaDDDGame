@@ -15,8 +15,8 @@ Tests.TestExecuter = class TestExecuter extends Tests.TestPublisher{
             this.addTestNameGroup(testName);        
             for(let testMethodName of this.#tests[testName].getTestNames()) {                   
                 await this.#tryTest(testMethodName, this.#tests[testName][testMethodName]);            
-            }            
-        }        
+            }
+        }
     }
 
     async #tryTest(testMethodName, test) {        
@@ -24,8 +24,12 @@ Tests.TestExecuter = class TestExecuter extends Tests.TestPublisher{
         {
             await test();
             this.addSuccessfulTest(testMethodName);            
-        } catch(error) {
-            this.addFailedTest(testMethodName, error);         
+        } catch(error) {                          
+            if(test.expectedError && error instanceof test.expectedError) {
+                this.addSuccessfulTest(testMethodName); 
+            }  else {
+                this.addFailedTest(testMethodName, error);         
+            }
         }
     }
 }

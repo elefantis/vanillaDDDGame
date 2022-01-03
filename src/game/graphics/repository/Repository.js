@@ -22,6 +22,19 @@ Graphics.Repository = class {
 
     async #tryGetScene(sceneId) {
         var scenes = await Service.Loader.LoadJsonAsync("data/scenes.json");
-        return scenes[sceneId];
+        if(sceneId in scenes)
+        {           
+            return scenes[sceneId];
+        }
+
+        throw new KeyNotFoundError("There is no scene with sceneid = " + sceneId);
+    }
+
+    async getLayers(sceneId) {
+        try {
+            return await Service.Loader.LoadJsonAsync("data/layers.json")[sceneId];           
+         } catch(error) {
+             throw error;
+         }
     }
 }

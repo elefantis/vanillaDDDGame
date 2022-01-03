@@ -7,7 +7,6 @@ Graphics.Test.CanvasLoadedHandlerTest = class CanvasLoadedHandlerTest extends Te
          // Arrange
          var dispatcher = new DomainEventDispatcher();
          var transaction = new Transaction(dispatcher);
-         var fakeCanvasSetup = new Graphics.Test.FakeCanvasSetup();
          var fakeRepo = new Graphics.Test.FakeRepository(); 
         var canvas = new Graphics.Canvas(transaction, fakeRepo);
         var handler = new Graphics.Handlers.CanvasLoadedHandler(dispatcher);
