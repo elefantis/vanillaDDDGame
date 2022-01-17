@@ -5,9 +5,9 @@ Graphics.Test.CanvasLoadedHandlerTest = class CanvasLoadedHandlerTest extends Te
 
     async handleTest() {
          // Arrange
-         var dispatcher = new DomainEventDispatcher();
-         var transaction = new Transaction(dispatcher);
-         var fakeRepo = new Graphics.Test.FakeRepository(); 
+        var dispatcher = new DomainEventDispatcher();
+        var transaction = new Transaction(dispatcher);
+        var fakeRepo = new Graphics.Test.FakeRepository(); 
         var canvas = new Graphics.Canvas(transaction, fakeRepo);
         var handler = new Graphics.Handlers.CanvasLoadedHandler(dispatcher);
         var fakeScene = {
