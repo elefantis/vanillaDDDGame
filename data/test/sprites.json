@@ -1,0 +1,14 @@
+{
+    "1": [
+        {
+            "layer": "0",
+            "name": "rect1",
+            "x": "100",
+            "y": "100",
+            "width": "100",
+            "height": "100",
+            "type": "Rect",
+            "color": "white"
+        }
+    ]
+}

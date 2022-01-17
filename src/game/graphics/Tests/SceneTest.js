@@ -1,7 +1,7 @@
 Graphics.Test.SceneTest = class SceneTest extends Tests.Test {
     constructor() {
         super();    
-        this.deploSceneDontExistsTest.expectedError = KeyNotFoundError
+        this.deploySceneDontExistsTest.expectedError = KeyNotFoundError
     }
 
     async deploySceneTest() {
@@ -22,7 +22,7 @@ Graphics.Test.SceneTest = class SceneTest extends Tests.Test {
         Assert.areEqual("succeed!2", deployHandler2.testMessage);
     }
 
-    async deploSceneDontExistsTest() {
+    async deploySceneDontExistsTest() {
         var dispatcher = new DomainEventDispatcher();
         var transaction = new Transaction(dispatcher);      
 
